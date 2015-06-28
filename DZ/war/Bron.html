@@ -1,0 +1,41 @@
+
+<html>
+<head>
+<title>Классы. </title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<script src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+	function city(id) {
+		id = parseInt(id);
+		$('#result1').load("/Booking?flag=1&city=" + id);
+	}
+</script>
+<script>
+	$(function() {
+		$('#hide1').click(function() {
+			$('#result1').load("/Booking?flag=0");
+		});
+	});
+</script>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div class="flex-container">
+		<div class="webapp" style="width: 100%;">
+			<h1>Бронирование столика в ресторане</h1>
+			<select onchange="city(this.value)">
+				<option selected="selected" disabled="disabled">Выберите
+					город</option>
+				<option value="0">Санкт-Петербург</option>
+				<option value="1">Москва</option>
+			</select>
+			<button id="hide1">Скрыть</button>
+			<span id="result1"></span>
+		</div>
+	</div>
+</body>
+</html>
