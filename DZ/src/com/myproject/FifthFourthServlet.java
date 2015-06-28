@@ -25,7 +25,7 @@ public class FifthFourthServlet extends HttpServlet {
 	static void substringEqualCheck(String sStr1, String sStr2)
 			throws FifthFourthException {
 		if (!(sStr1.contains(sStr2))) {
-			FifthFourthException e = new FifthFourthException ("Неверно.");
+			FifthFourthException e = new FifthFourthException("Неверно.");
 			throw e;
 		}
 	}

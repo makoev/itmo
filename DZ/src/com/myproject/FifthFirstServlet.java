@@ -15,7 +15,7 @@ public class FifthFirstServlet extends HttpServlet {
 		String sStr = req.getParameter("inputNum1");
 		try {
 			NumberFormatEquality(sStr);
-			resp.getWriter().print(" Это число");
+			resp.getWriter().print("Ура! Это число!");
 		} catch (FifthFirstException exc) {
 			resp.getWriter().print(exc);
 		}
@@ -25,7 +25,7 @@ public class FifthFirstServlet extends HttpServlet {
 		try {
 			double dStr = Double.parseDouble(sStr);
 		} catch (NumberFormatException eDef) {
-			FifthFirstException e = new FifthFirstException ("Это не число.");
+			FifthFirstException e = new FifthFirstException("Это не число. Попробуйте еще раз.");
 			throw e;
 		}
 	}

@@ -17,7 +17,7 @@ public class FifthSecondServlet extends HttpServlet {
 		String sStr = req.getParameter("inputNum1");
 		try {
 			DateFormatEquality(sStr);
-			resp.getWriter().print("Это дата");
+			resp.getWriter().print("Ура! Это дата");
 		} catch (FifthSecondException e) {
 			resp.getWriter().print(e);
 		}
@@ -29,7 +29,7 @@ public class FifthSecondServlet extends HttpServlet {
 		try {
 			dateFormat.parse(sStr.trim());
 		} catch (ParseException eDef) {
-			FifthSecondException e = new FifthSecondException ("Это не дата.");
+			FifthSecondException e = new FifthSecondException("Это не дата. Попробуйте еще раз.");
 			throw e;
 		}
 	}
